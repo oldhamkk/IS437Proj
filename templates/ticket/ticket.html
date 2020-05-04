@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Change Ticket</h1>
+	<form action="/saveticket" method="POST">
+		Section:<br>
+		<input type="text" name="section" value="{{ ticket.section }}"  /><br><br>
+
+		Row:<br>
+		<input type="text" name="row" value="{{ ticket.row }}"  /><br><br>
+
+    Available:<br>
+		<select name="available">
+			<option value="True" >Yes</option>
+			<option value="False" >No</option>
+		</select> <br><br>
+
+    Handicap Accessible:<br>
+		<select name="handicap">
+			<option value="True" >Yes</option>
+			<option value="False" >No</option>
+		</select> <br><br>
+
+    Home Section:<br>
+		<select name="type">
+			<option value="True" >Yes</option>
+			<option value="False" >No</option>
+		</select> <br><br>
+
+    Box Seat:<br>
+		<select name="box">
+			<option value="True" >Yes</option>
+			<option value="False" >No</option>
+		</select> <br><br>
+
+		Event ID:<br>
+    <select name="EventID">
+      {% for event in el %}
+        <option value="{{ event.EID }}">{{ event.name }}</option>
+      {% endfor %}
+    </select> <br><br>
+
+		<input type="hidden" name="TID" value="{{ ticket.TID }}"  />
+
+    <br>
+
+		<input type="submit" value="Save ticket"/>
+
+
+		</form>
+{% endblock %}
+© 2020 GitHub, Inc.

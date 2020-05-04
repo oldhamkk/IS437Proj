@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tickets</h1>
+            		<a href="/newcustomerticket">Purchase new ticket</a>
+            		<table>
+            		<tr>
+                  			<td>id</td>
+                  			<td>section</td>
+                  			<td>row</td>
+                        <td>available</td>
+                        <td>handicap</td>
+                        <td>home</td>
+                        <td>box</td>
+                        <td>event</td>
+		           </tr>
+    {% for ticket in tickets %}
+		           <tr>
+                  			<td>{{ ticket.TID }}</td>
+                  			<td>{{ ticket.section }}</td>
+                  			<td>{{ ticket.row }}</td>
+                        <td>{{ ticket.available }}</td>
+                        <td>{{ ticket.handicap }}</td>
+                        <td>{{ ticket.type }}</td>
+                        <td>{{ ticket.box }}</td>
+                        {% for event in el %}
+                          <td>{{ event.name }}</td>
+                        {% endfor %}
+		           </tr>
+    {% endfor %}
+	     </table>
+{% endblock %}

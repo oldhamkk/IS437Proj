@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>New ticket</h1>
+	      {% if msg %}
+      <div id="errormsg">
+	        {% for err in msg %}
+		            {{ err }}<br>
+	        {% endfor %}
+	        </div>
+    {% endif %}
+
+		           <form action="/newticket" method="POST">
+                       Event:<br>
+                      <select name="EventID">
+                        {% for event in el %}
+                          <option value="{{ event.EID }}">{{ event.name }}</option>
+                        {% endfor %}
+                      </select> <br><br>
+                       Section:<br>
+                       <input type="text" name="section" /><br><br>
+
+                       Row:<br>
+                       <input type="text" name="row"  /><br><br>
+
+                       Availability:<br>
+                 			<select name="available">
+                 				<option value="True" >Yes</option>
+                 				<option value="False" >No</option>
+                 			</select> <br><br>
+
+                       Handicap:<br>
+                 			<select name="handicap">
+                 				<option value="True" >Yes</option>
+                 				<option value="False" >No</option>
+                 			</select> <br><br>
+
+                       Home Section:<br>
+                 			<select name="type">
+                 				<option value="True" >Yes</option>
+                 				<option value="False" >No</option>
+                 			</select> <br><br>
+
+                      Box Seat:<br>
+                     <select name="box">
+                       <option value="True" >Yes</option>
+                       <option value="False" >No</option>
+                     </select> <br><br>
+
+
+
+           			      <br>
+
+           			      <input type="submit" value="Purchase ticket"/>
+
+		          </form>
+{% endblock %}

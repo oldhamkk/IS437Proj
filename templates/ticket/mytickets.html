@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Tickets</h1>
+		<a href="/newticket">Purchase new ticket</a>
+		<table>
+		<tr>
+			<td>id</td>
+			<td>section</td>
+			<td>row</td>
+      <td>available</td>
+      <td>handicap</td>
+      <td>type</td>
+      <td>box</td>
+      <td>Event Name</td>
+      <td>Event Start</td>
+      <td>Event End</td>
+
+
+		</tr>
+    {% for ticket in tickets %}
+		<tr>
+			<td>{{ ticket.TID }}</td>
+			<td>{{ ticket.section }}</td>
+      <td>{{ ticket.row }}</td>
+      <td>{{ ticket.available }}</td>
+      <td>{{ ticket.handicap }}</td>
+      <td>{{ ticket.type }}</td>
+      <td>{{ ticket.box }}</td>
+      <td>{{ ticket.name }}</td>
+      <td>{{ ticket.start }}</td>
+      <td>{{ ticket.end }}</td>
+
+
+		</tr>
+    {% endfor %}
+	</table>
+{% endblock %}
