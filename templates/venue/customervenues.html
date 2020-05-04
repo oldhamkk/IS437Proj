@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Venues</h1>
+            		<table>
+            		<tr>
+                  			<td>id</td>
+                  			<td>VenueName</td>
+                  			<td>VenueCollege</td>
+                        <td>VenueAddress</td>
+                        <td>VenuePhoneNumber</td>
+		           </tr>
+    {% for venue in venues %}
+		           <tr>
+                  			<td>{{ venue.VenueID }}</td>
+                  			<td>{{ venue.VenueName }}</td>
+                  			<td>{{ venue.VenueCollege }}</td>
+                        <td>{{ venue.VenueAddress }}</td>
+                        <td>{{ venue.VenuePhoneNumber }}</td>
+		           </tr>
+    {% endfor %}
+	     </table>
+{% endblock %}

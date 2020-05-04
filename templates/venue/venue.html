@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Venue</h1>
+	<form action="/savevenue" method="POST">
+		Venue Name:<br>
+		<input type="text" name="VenueName" value="{{ venue.VenueName }}"  /><br><br>
+
+		Venue Address:<br>
+		<input type="text" name="VenueAddress" value="{{ venue.VenueAddress }}"  /><br><br>
+
+		Venue College:<br>
+		<input type="text" name="VenueCollege" value="{{ venue.VenueCollege }}"   /><br><br>
+
+    Phone Number (907-888-9999):<br>
+    <input type="text" name="VenuePhoneNumber" value="{{ venue.VenuePhoneNumber }}"  /><br><br>
+
+		<input type="hidden" name="VenueID" value="{{ venue.VenueID }}"  />
+
+    <br>
+
+		<input type="submit" value="Save venue"/>
+
+
+		</form>
+
+  <form action="/deletevenue" method="POST">
+    <input type="submit" value="Delete this venue" />
+    <input type="hidden" name="VenueID" value="{{ venue.VenueID }}" />
+
+  </form>
+
+{% endblock %}
+© 2020 GitHub, Inc.
