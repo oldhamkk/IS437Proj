@@ -16,5 +16,6 @@ This App will support two user type, admin and customer. The use cases of both u
 User Type | Email | Password
 -------- | ------ | ------- 
 admin     | a@a.com | 123
- 
+customer  | c@c.com | 456
+
 <img width="740" alt="IS437RS" src="https://user-images.githubusercontent.com/60119174/80953234-952c8880-8da7-11ea-98ce-abdc5581e2e2.png">
