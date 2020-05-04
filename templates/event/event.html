@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Event</h1>
+	<form action="/saveevent" method="POST">
+		Event Name (Team VS Team):<br>
+		<input type="text" name="Event Name" value="{{ event.name }}"  /><br><br>
+
+		Event Start Date Address (YYYY-MM-DD HH:MM:SS):<br>
+		<input type="text" name="Event Start" value="{{ event.start }}"  /><br><br>
+
+		Event End Date (YYYY-MM-DD HH:MM:SS):<br>
+		<input type="text" name="Event End" value="{{ event.end }}"   /><br><br>
+
+    Venue ID:<br>
+    <input type="text" name="VenueID" value="{{ event.VenueID }}"  /><br><br>
+
+		<input type="hidden" name="Event ID" value="{{ event.EID }}"  />
+
+    <br>
+
+		<input type="submit" value="Save event"/>
+
+
+		</form>
+    <form action="/deleteevent" method="POST">
+      <input type="submit" value="Delete this event" />
+      <input type="hidden" name="EID" value="{{ event.EID }}" />
+
+    </form>
+
+{% endblock %}
+© 2020 GitHub, Inc.

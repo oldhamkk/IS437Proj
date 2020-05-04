@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Events</h1>
+            		<a href="/newevent">Add new event</a>
+            		<table>
+            		<tr>
+                  			<td>id</td>
+                  			<td>name</td>
+                  			<td>start</td>
+                        <td>end</td>
+                        <td>venue</td>
+		           </tr>
+    {% for event in events %}
+		           <tr>
+                  			<td><a href="event?id={{ event.EID }}">{{ event.EID }}</a></td>
+                  			<td>{{ event.name }}</td>
+                  			<td>{{ event.start }}</td>
+                        <td>{{ event.end }}</td>
+                        {% for venue in vl %}
+                          <td>{{ venue.VenueName }}</td>
+                        {% endfor %}
+		           </tr>
+    {% endfor %}
+	     </table>
+{% endblock %}

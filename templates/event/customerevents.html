@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Events</h1>
+            		<table>
+            		<tr>
+                  			<td>id</td>
+                  			<td>name</td>
+                  			<td>start</td>
+                        <td>end</td>
+                        <td>venue</td>
+		           </tr>
+    {% for event in events %}
+		           <tr>
+                  			<td>{{ event.EID }}</td>
+                  			<td>{{ event.name }}</td>
+                  			<td>{{ event.start }}</td>
+                        <td>{{ event.end }}</td>
+                        {% for venue in vl %}
+                          <td>{{ venue.VenueName }}</td>
+                        {% endfor %}
+		           </tr>
+    {% endfor %}
+	     </table>
+{% endblock %}
